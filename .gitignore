@@ -1,0 +1,10 @@
+# Configuración local con contraseñas y tokens
+**/.env
+
+# Archivos generados
+**/target/
+**/__pycache__/
+**/*.pyc
+**/.DS_Store
+**/__MACOSX/
+*.zip

@@ -1,0 +1,10 @@
+Práctica 3 - Evidencia de Compose
+Estado:
+SERVICE     STATUS
+mosquitto   Up 30 seconds (healthy)
+sensor01    Up 23 seconds
+sensor02    Up 24 seconds
+sensor01:
+{"id": "sensor01", "temperatura": 21.3}
+sensor02:
+{"id": "sensor02", "temperatura": 21.5}

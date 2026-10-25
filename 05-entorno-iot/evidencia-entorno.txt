@@ -1,0 +1,13 @@
+Práctica 5 - Evidencia de despliegue
+Estado de servicios:
+SERVICE     STATUS                        PORTS
+grafana     Up About a minute (healthy)   0.0.0.0:13000->3000/tcp, [::]:13000->3000/tcp
+influxdb    Up About a minute (healthy)   0.0.0.0:18086->8086/tcp, [::]:18086->8086/tcp
+mosquitto   Up About a minute (healthy)   0.0.0.0:11883->1883/tcp, [::]:11883->1883/tcp
+nodered     Up About a minute (healthy)   0.0.0.0:11880->1880/tcp, [::]:11880->1880/tcp
+Pruebas HTTP:
+http://127.0.0.1:11880/ HTTP 200
+http://127.0.0.1:18086/health HTTP 200
+http://127.0.0.1:13000/api/health HTTP 200
+MQTT: mensaje ok recibido
+Grafana: fuente InfluxDB aula creada

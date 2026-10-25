@@ -1,0 +1,33 @@
+Práctica 4 - Evidencia de API y base de datos
+Servicios:
+SERVICE   STATUS
+api       Up 59 seconds (healthy)
+db        Up About a minute (healthy)
+Estado API: UP
+Dispositivos: 4
+[
+  {
+    "id": 1,
+    "nombre": "puesto01",
+    "ubicacion": "taller1",
+    "tipo": "estacion"
+  },
+  {
+    "id": 2,
+    "nombre": "puesto02",
+    "ubicacion": "taller1",
+    "tipo": "estacion"
+  },
+  {
+    "id": 3,
+    "nombre": "horno-a",
+    "ubicacion": "nave2",
+    "tipo": "termopar"
+  },
+  {
+    "id": 4,
+    "nombre": "sensor-practica4",
+    "ubicacion": "aula",
+    "tipo": "temperatura"
+  }
+]

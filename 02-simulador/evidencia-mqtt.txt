@@ -1,0 +1,13 @@
+Práctica 2 - Evidencia de ejecución
+Imagen:
+aula/simulador:1.0 190MB
+Contenedores:
+p2-sensor Up 43 seconds
+p2-mqtt Up 44 seconds
+Mensajes publicados:
+{"id": "practica2", "temperatura": 19.6}
+{"id": "practica2", "temperatura": 19.6}
+{"id": "practica2", "temperatura": 19.8}
+{"id": "practica2", "temperatura": 19.7}
+Mensaje recibido por Mosquitto:
+{"id": "practica2", "temperatura": 19.6}

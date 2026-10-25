@@ -1,0 +1,41 @@
+# Un broker MQTT y dos sensores simulados que publican en él
+#   docker compose up -d --build      arrancar (y construir la imagen del simulador)
+#   docker compose logs -f            ver qué hacen
+#   docker compose down               parar y borrar los contenedores
+name: demo-sensores
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports:
+      - "${PUERTO_MQTT:-1883}:1883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    healthcheck:
+      test: ["CMD", "mosquitto_sub", "-t", "$$SYS/broker/uptime", "-C", "1", "-W", "3"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  sensor01:
+    build: ../02-simulador
+    image: aula/simulador:1.0
+    environment:
+      SENSOR_ID: sensor01
+      PERIODO: ${PERIODO:-2}
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
+
+  sensor02:
+    build: ../02-simulador
+    image: aula/simulador:1.0
+    environment:
+      SENSOR_ID: sensor02
+      PERIODO: ${PERIODO:-2}
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    restart: unless-stopped
